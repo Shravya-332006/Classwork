@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Attendance System</title>
+</head>
+<body>
+    <h1>Student Attendance Submission</h1>
+
+    {% if message %}
+        <p style="color: rgb(245, 36, 36); font-weight: bold;">{{ message | safe }}</p>
+    {% endif %}
+
+    <form method="POST" action="/">
+        <label for="student_name">Enter Your Name:</label><br>
+        <input type="text" id="student_name" name="student_name" required><br><br>
+        <input type="submit" value="Mark Present">
+    </form>
+
+    <hr>
+    
+    <h2>Admin/Teacher View</h2>
+    <p>
+        <a href="{{ url_for('view_records') }}">View All Attendance Records</a>
+    </p>
+
+</body>
+</html>
